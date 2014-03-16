@@ -1,0 +1,153 @@
+{
+    "name": "Michael Graczyk",
+    "classification": "US Citizen",
+    "contact": {
+        "methods": [
+            { 
+                "name": "telephone",
+                "type": "tel",
+                "value": 5123638462 
+            },
+            { 
+                "name": "email",
+                "type": "email",
+                "value": "jobs@mgraczyk.com" 
+            },
+            { 
+                "name": "website",
+                "type": "url",
+                "value": "mgraczyk.com"
+            }
+        ]
+    },
+
+    "objectives": [{"field": "engineering", "objective": null}],
+
+    "skill_types": [
+        {
+            "type": "Programming Languages",
+            "skills": [
+                {
+                    "name": "C/C++",
+                    "capability": 9,
+                    "desire": 10
+                },
+                {
+                    "name": "C#",
+                    "capability": 8,
+                    "desire": 7
+                },
+                {
+                    "name": "Python",
+                    "capability": 9,
+                    "desire": 8
+                },
+                {
+                    "name": "QDSP asm",
+                    "capability": 6,
+                    "desire": 10
+                },
+                {
+                    "name": "Perl",
+                    "capability": 3,
+                    "desire": 0 
+                },
+                {
+                    "name": "Java",
+                    "capability": 6,
+                    "desire": 4
+                },
+                {
+                    "name": "Matlab/Octave",
+                    "capability": 7,
+                    "desire": 8
+                }
+            ]
+        },
+        {
+            "type": "Platforms",
+            "skills": [
+                {
+                    "name": "GNU/Linux",
+                    "capability": 8,
+                    "desire": 9
+                },
+                {
+                    "name": ".NET",
+                    "capability": 8,
+                    "desire": 6
+                }
+            ]
+        },
+        {
+            "type": "Project Familiarity",
+            "skills": [
+                {
+                    "name": "GCC",
+                    "capability": 5,
+                    "desire": 7
+                },
+                {
+                    "name": "Linux Kernel",
+                    "capability": 5,
+                    "desire": 8
+                }
+            ]
+        }
+    ],
+
+    "education": [
+        {
+            "what": "Bachelor of Science in Electrical Engineering",
+            "where": "University of Texas at Austin",
+            "when": { "start": 2009, "end": 2013 },
+            "GPA": "3.96/4.00"
+        },
+        {
+            "what": "Bachelor of Science in Mathematics",
+            "where": "University of Texas at Austin",
+            "when": { "start": 2010, "end": 2014 },
+            "GPA": "3.92/4.00"
+        }
+    ],
+
+    "work": [
+        {
+            "title": "Engineer",
+            "company": "Qualcomm DSP Architecture Group",
+            "when": { "start": 2013, "end": "Present" },
+
+            // TODO
+            "actions": []
+        }
+    ],
+
+    "courses": [
+            // TODO
+
+    ],
+
+    "projects": [
+        {
+            "title": ""
+        }
+        // TODO
+    ],
+
+    "organizations": [
+        "Phi Beta Kappa",
+        "Tau Beta Pi",
+        "Eta Kappa Nu (Former President of UT Psi Chapter)"
+    ]
+};
+
+function ResumeViewModel() {
+    var self = this;
+
+    //self.resume = document.getElementById("resume-data");
+    self.resume = resumeData;
+
+    if (!self.resume) {
+        throw "Couldn't load resume data!";
+    }
+}
