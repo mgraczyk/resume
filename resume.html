@@ -15,6 +15,21 @@ body {
     margin: 0px;
 }
 
+.outer-center {
+    float: right;
+    right: 50%;
+    position: relative;
+}
+.outer-center>.inner-center {
+    float: right;
+    right: -50%;
+    position: relative;
+}
+
+.outer-center+.clear {
+    clear: both;
+}
+
 .classification {
     display: none;
 }
@@ -56,8 +71,8 @@ ul.education>li {
 }
 
 .resume {
-    margin: auto;
-    width: 85%;    
+    padding: 2em 2em 2em 2em;
+    background-color: #eeeeee;
 }
 
 .name {
@@ -69,8 +84,8 @@ ul.education>li {
 
 
 <body>
-<div class="center">
-<div data-bind="with: resume" class="resume">
+<div class="outer-center">
+<div data-bind="with: resume" class="inner-center resume">
     <div class="header">
         <h1 data-bind="text: name" class="my name"></h1><span data-bind="text: classification" class="classification"></span>
         <div data-bind="with: contact" class="contact">
@@ -79,7 +94,7 @@ ul.education>li {
                     <span data-bind="text: name +': '" class="name"></span>
                     <span data-bind="if: type==='tel', attr: { href: 'tel:'+value }"></span>
                     <span data-bind="if: type==='email', attr: { href: 'mailto:'+value }"></span>
-                    <span data-bind="if: type==='url', attr: { href: 'http://'+value }">hi</span>
+                    <span data-bind="if: type==='url', attr: { href: 'http://'+value }"></span>
                     <span data-bind="text: value" class="contact-value"></span>
                 </li>
             </ul>
@@ -116,6 +131,7 @@ ul.education>li {
     </div>
 </div>
 </div>
+<div class="clear"></div>
 
 <script type='text/javascript' src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js"></script>
 <!--<script id="resume-data" type='application/json' src="resume.json"></script>-->
