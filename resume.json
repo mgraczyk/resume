@@ -137,8 +137,13 @@
 
     "projects": [
         {
-            "what": "",
-            "where": "",
+            "what": "MIST - The Learning Irrigation Controller",
+            "where": "UT Senior Design Project",
+            "details": []
+        },
+        {
+            "what": "COOL to MIPS Compiler",
+            "where": "Stanford Online CS143",
             "details": []
         }
     ],

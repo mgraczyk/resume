@@ -3,11 +3,11 @@
 <!-- Michael Graczyk's Resume -->
 <!-- Copyright 2014 - Michael Graczyk -->
 <!-- Like what you see? View it live at mgraczyk.com, or contact me if you're looking for an engineer. -->
+<html>
+<head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<html>
-<head>
 <title>Resume</title>
 
 <style>
@@ -98,22 +98,39 @@ a {
     list-style-type: disc;
 }
 
-.major.item {
-    margin-bottom: 0.5em;
-}
-
 .skill-types>.major.item>.name {
     font-weight: bold;
 }
 
+.major.item {
+    margin-bottom: 0.75em;
+}
+
+.major.item .what {
+    white-space: nowrap;
+}
+
+.major.item .what:after {
+    content: ":";
+}
+
+.major.item .where {
+}
+
 .date-range {
+    display: inline-block;
+    white-space: nowrap;
     float: right;
-    display: inline;
     text-align: right;
+    margin-left: 1.75em;
 }
 
 .date-range>.end:before {
     content: " - ";
+}
+
+.gpa:before {
+    content: "GPA: ";
 }
 
 .name,
@@ -157,12 +174,12 @@ a {
             <h3 class="title">professional experience</h3>
             <ul data-bind="foreach: work" class="work">
                 <li class="major item">
-                    <div data-bind="text: what" class="what"></div>
-                    <div data-bind="with: when" class="date-range">
+                    <span data-bind="text: what" class="what"></span>
+                    <span data-bind="with: when" class="date-range">
                         <span data-bind="text: start" class="start"></span>
                         <span data-bind="text: end" class="end"></span>
-                    </div>
-                    <div data-bind="text: where" class="where"></div>
+                    </span>
+                    <span data-bind="text: where" class="where name"></span>
                     <ul data-bind="foreach: details" class="details">
                         <li class="minor item">
                             <!--TODO-->
@@ -191,13 +208,13 @@ a {
             <h3 class="title">education</h3>
             <ul data-bind="foreach: education" class="education" >
                 <li class="major item">
-                    <div data-bind="text: what" class="what" ></div>
-                    <div data-bind="with: when" class="date-range" >
+                    <span data-bind="text: what" class="what"></span>
+                    <span data-bind="with: when" class="date-range" >
                         <span data-bind="text: start" class="start"></span>
                         <span data-bind="text: end" class="end"></span>
-                    </div>
-                    <div data-bind="text: where" class="where" ></div>
-                    <div data-bind="text: 'GPA: ' + GPA" class="gpa" ></div>
+                    </span>
+                    <span data-bind="text: where" class="where name"></span>
+                    <div data-bind="text: GPA" class="gpa" ></div>
                 </li> 
             </ul>
         </div>
@@ -205,8 +222,8 @@ a {
             <h3 class="title">projects</h3>
             <ul data-bind="foreach: projects" class="projects">
                 <li class="major item">
-                    <div data-bind="text: what" class="what"></div>
-                    <div data-bind="optional: where, binding: 'text'" class="where" ></div>
+                    <span data-bind="text: what" class="what"></span>
+                    <span data-bind="optional: where, binding: 'text'" class="where name" ></span>
                     <ul data-bind="foreach: details" class="details">
                         <li class="minor item">
                             <!--TODO-->
