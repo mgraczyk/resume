@@ -126,6 +126,9 @@ a {
 
 
 <body>
+<div data-bind="template: {name: 'resumeTemplate'}"></div>
+
+<script type="text/html" id="resumeTemplate">
 <div class="outer-center">
 <div data-bind="with: resume" class="inner-center resume">
     <div class="header">
@@ -224,6 +227,7 @@ a {
 </div>
 </div>
 <div class="clear"></div>
+</script>
 
 <script type='text/javascript' src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js"></script>
 <script>
