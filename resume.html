@@ -4,6 +4,8 @@
 <!-- Copyright 2014 - Michael Graczyk -->
 <!-- Like what you see? View it live at mgraczyk.com, or contact me if you're looking for an engineer. -->
 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 <html>
 <head>
 <title>Resume</title>
@@ -13,6 +15,12 @@
 body {
     font-family: "DejaVu Serif", "Georgia", serif;
     margin: 0px;
+
+    background: #dfdfdf;
+}
+
+a {
+    text-decoration: none;
 }
 
 .outer-center {
@@ -31,11 +39,11 @@ body {
 }
 
 .resume {
-    padding: 2em 2em 2em 2em;
-    background-color: #eeeeee;
+    padding: 1em 8em 1em 8em;
+    background-color: #F8ECC2;
 }
 
-.identification>.name {
+.name {
     /* Don't put my name on two lines */
     white-space: nowrap;
 }
@@ -54,8 +62,17 @@ body {
     list-style-type: none;
 }
 
+.contact .contact-method>.name {
+    margin-right: 0.5em;
+    float: left;
+}
+
+.contact .contact-value {
+    float: right;
+}
+
 .classification {
-    display: block;
+    display: none;
 }
 
 .resume-body {
@@ -81,11 +98,11 @@ body {
     list-style-type: disc;
 }
 
-.education>.item {
+.major.item {
     margin-bottom: 0.5em;
 }
 
-.skill-types>.item>.name {
+.skill-types>.major.item>.name {
     font-weight: bold;
 }
 
@@ -122,12 +139,12 @@ body {
         <div data-bind="with: contact" class="contact">
             <ul data-bind="foreach: methods" class="contact-methods">
                 <li class="contact-method">
-                    <span data-bind="text: name +': '" class="name"></span>
+                    <span data-bind="text: name +':'" class="name"></span>
                     <span data-bind="if: type==='tel'">
                         <a data-bind="text: value, attr: { href: 'tel:'+value }", class="contact-value"></a>
                     </span>
                     <span data-bind="if: type==='email'">
-                        <a data-bind="text: value, attr: { href: 'mailto:'+value }", class="contact-value"></a>
+                        <a data-bind="text: value, attr: { href: 'mailto:' + value}", class="contact-value"></a>
                     </span>
                     <span data-bind="if: type==='url'">
                         <a data-bind="text: value, attr: { href: 'http://'+value }", class="contact-value"></a>
@@ -138,15 +155,35 @@ body {
     </div>
     <div class="resume-body">
         <div class="body-section">
-             <h3 class="title">skill types</h3>
+            <h3 class="title">professional experience</h3>
+            <ul data-bind="foreach: work" class="work">
+                <li class="major item">
+                    <div data-bind="text: what" class="what"></div>
+                    <div data-bind="with: when" class="date-range">
+                        <span data-bind="text: start" class="start"></span>
+                        <span data-bind="text: end" class="end"></span>
+                    </div>
+                    <div data-bind="text: where" class="where"></div>
+                    <ul data-bind="foreach: details" class="details">
+                        <li class="minor item">
+                            <!--TODO-->
+                        </li>
+                    </ul>
+                </li> 
+            </ul>
+        </div>
+        <div class="body-section">
+            <h3 class="title">skills</h3>
 
             <ul data-bind="foreach: skill_types" class="skill-types">
-                <li class="item">
+                <li class="major item">
                     <span data-bind="text: type" class="name"></span>
                     <ul data-bind="foreach: skills" class="skills">
-                        <li class="skill">
-                            <span data-bind="text: name, attr: { title: 'capability = ' + capability + ', desire = ' + desire }" class="name"></span>
-                        </li>
+                        <!-- ko if: desire > 2 -->
+                            <li class="minor item skill">
+                                <span data-bind="text: name, attr: { title: 'capability = ' + capability + ', desire = ' + desire }" class="name"></span>
+                            </li>
+                        <!-- /ko -->
                     </ul>
                 </li>
             </ul>
@@ -154,34 +191,37 @@ body {
         <div class="body-section">
             <h3 class="title">education</h3>
             <ul data-bind="foreach: education" class="education" >
-                <li class="item">
+                <li class="major item">
                     <div data-bind="text: what" class="what" ></div>
                     <div data-bind="with: when" class="date-range" >
                         <span data-bind="text: start" class="start"></span>
                         <span data-bind="text: end" class="end"></span>
                     </div>
                     <div data-bind="text: where" class="where" ></div>
-                    <div data-bind="text: where" class="where" ></div>
-                    <div data-bind="text: GPA" class="gpa" ></div>
+                    <div data-bind="text: 'GPA: ' + GPA" class="gpa" ></div>
                 </li> 
             </ul>
         </div>
         <div class="body-section">
-            <h3 class="title">work experience</h3>
-            <ul data-bind="foreach: work" class="work">
-                <li class="item">
-                    <div data-bind="text: position" class="position" ></div>
-                    <div data-bind="with: when" class="date-range" >
-                        <span data-bind="text: start" class="start"></span>
-                        <span data-bind="text: end" class="end"></span>
-                    </div>
-                    <div data-bind="text: company" class="where" ></div>
-                    <ul data-bind="foreach: actions" class="actions">
-                        <li class="item">
+            <h3 class="title">projects</h3>
+            <ul data-bind="foreach: projects" class="projects">
+                <li class="major item">
+                    <div data-bind="text: what" class="what"></div>
+                    <div data-bind="optional: where, binding: 'text'" class="where" ></div>
+                    <ul data-bind="foreach: details" class="details">
+                        <li class="minor item">
                             <!--TODO-->
                         </li>
                     </ul>
                 </li> 
+            </ul>
+        </div>
+        <div class="body-section">
+            <h3 class="title">Organizations</h3>
+            <ul data-bind="foreach: organizations" class="organizations">
+                <li class="item">
+                    <span data-bind="text: $data" class="name"></span>
+                </li>
             </ul>
         </div>
     </div>
@@ -255,7 +295,7 @@ resumeData = {
                     "desire": 8
                 },
                 {
-                    "name": "QDSP asm",
+                    "name": "QDSP6 asm",
                     "capability": 6,
                     "desire": 10
                 },
@@ -325,12 +365,28 @@ resumeData = {
 
     "work": [
         {
-            "position": "Engineer",
-            "company": "Qualcomm DSP Architecture Group",
+            "what": "Engineer",
+            "where": "Qualcomm DSP Architecture Group",
             "when": { "start": 2013, "end": "Present" },
 
             // TODO
-            "actions": []
+            "details": []
+        },
+        {
+            "what": "Engineering Intern",
+            "where": "Intel Graphics Architecture Group",
+            "when": { "start": "Feb 2011", "end": "April 2012" },
+
+            // TODO
+            "details": []
+        },
+        {
+            "what": "Engineering Intern",
+            "where": "Qualcomm UMTS Customer Engineering",
+            "when": { "start": "Feb 2011", "end": "April 2012" },
+
+            // TODO
+            "details": []
         }
     ],
 
@@ -341,7 +397,11 @@ resumeData = {
 
     "projects": [
         {
-            "title": ""
+            "what": "",
+            "where": "",
+
+            // TODO
+            "details": []
         }
         // TODO
     ],
@@ -349,7 +409,7 @@ resumeData = {
     "organizations": [
         "Phi Beta Kappa",
         "Tau Beta Pi",
-        "Eta Kappa Nu (Former President of UT Psi Chapter)"
+        "Eta Kappa Nu (Former President of UT Ψ Chapter)"
     ]
 };
 
@@ -361,6 +421,25 @@ function ResumeViewModel() {
 
     if (!self.resume) {
         throw "Couldn't load resume data!";
+    }
+}
+
+// Allow certain text features to be optional
+ko.bindingHandlers.optional = {
+    update: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
+        var innerBinding = allBindings.get('binding')
+        if (innerBinding) {
+            try {
+                ko.bindingHandlers[innerBinding].update(element, valueAccessor, allBindings, viewModel, bindingContext);
+            } catch(err) {
+                // Ignore missing properties
+                if (err.name !== "ReferenceError") {
+                    throw(err);
+                }
+            }
+        } else {
+            throw "binding must be specified."
+        }
     }
 }
 
