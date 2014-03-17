@@ -43,7 +43,7 @@
                     "desire": 8
                 },
                 {
-                    "name": "QDSP asm",
+                    "name": "QDSP6 asm",
                     "capability": 6,
                     "desire": 10
                 },
@@ -113,30 +113,39 @@
 
     "work": [
         {
-            "title": "Engineer",
-            "company": "Qualcomm DSP Architecture Group",
+            "what": "Engineer",
+            "where": "Qualcomm DSP Architecture Group",
             "when": { "start": 2013, "end": "Present" },
-
-            // TODO
-            "actions": []
+            "details": []
+        },
+        {
+            "what": "Engineering Intern",
+            "where": "Intel Graphics Architecture Group",
+            "when": { "start": "Feb 2011", "end": "April 2012" },
+            "details": []
+        },
+        {
+            "what": "Engineering Intern",
+            "where": "Qualcomm UMTS Customer Engineering",
+            "when": { "start": "Feb 2011", "end": "April 2012" },
+            "details": []
         }
     ],
 
     "courses": [
-            // TODO
-
     ],
 
     "projects": [
         {
-            "title": ""
+            "what": "",
+            "where": "",
+            "details": []
         }
-        // TODO
     ],
 
     "organizations": [
         "Phi Beta Kappa",
         "Tau Beta Pi",
-        "Eta Kappa Nu (Former President of UT Psi Chapter)"
+        "Eta Kappa Nu (Former President of UT Ψ Chapter)"
     ]
 }
