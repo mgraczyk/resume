@@ -11,7 +11,7 @@
 <style>
 
 body {
-    font-family: serif;
+    font-family: "DejaVu Serif", "Georgia", serif;
     margin: 0px;
 }
 
@@ -30,11 +30,40 @@ body {
     clear: both;
 }
 
-.classification {
-    display: none;
+.resume {
+    padding: 2em 2em 2em 2em;
+    background-color: #eeeeee;
 }
 
-ul.skill-types {
+.identification>.name {
+    /* Don't put my name on two lines */
+    white-space: nowrap;
+}
+
+.identification {
+    display: block;
+    float: left;
+}
+
+.contact {
+    display: inline;
+    float: right;
+}
+
+.contact .contact-methods {
+    list-style-type: none;
+}
+
+.classification {
+    display: block;
+}
+
+.resume-body {
+    display: inline-block;
+    width: 100%;
+}
+
+.skill-types {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -42,40 +71,40 @@ ul.skill-types {
     overflow: hidden;
 }
 
-ul.skill-types>li {
+.skill-types>.item {
     margin: 0.5em;
     float: left;
     display: inline;
 }
 
-ul.education>li {
+.skill-types .skills {
+    list-style-type: disc;
+}
+
+.education>.item {
     margin-bottom: 0.5em;
 }
 
-.skill-types li .name {
+.skill-types>.item>.name {
     font-weight: bold;
 }
 
-.center {
-    display: block;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    margin: auto;
-    overflow: visible;
-    visibility: visible;
+.skill-types .skill .name {
+    font-family: "Consolas", monospace;
 }
 
-.resume {
-    padding: 2em 2em 2em 2em;
-    background-color: #eeeeee;
+.date-range {
+    float: right;
+    display: inline;
+    text-align: right;
 }
 
-.name {
+.date-range>.end:before {
+    content: " - ";
+}
+
+.name,
+.body-section>.title {
     text-transform: capitalize;
 }
 
@@ -87,44 +116,71 @@ ul.education>li {
 <div class="outer-center">
 <div data-bind="with: resume" class="inner-center resume">
     <div class="header">
-        <h1 data-bind="text: name" class="my name"></h1><span data-bind="text: classification" class="classification"></span>
+        <div class="identification">
+            <h1 data-bind="text: name" class="name"></h1><p data-bind="text: classification" class="classification"></p>
+        </div>
         <div data-bind="with: contact" class="contact">
             <ul data-bind="foreach: methods" class="contact-methods">
                 <li class="contact-method">
                     <span data-bind="text: name +': '" class="name"></span>
-                    <span data-bind="if: type==='tel', attr: { href: 'tel:'+value }"></span>
-                    <span data-bind="if: type==='email', attr: { href: 'mailto:'+value }"></span>
-                    <span data-bind="if: type==='url', attr: { href: 'http://'+value }"></span>
-                    <span data-bind="text: value" class="contact-value"></span>
+                    <span data-bind="if: type==='tel'">
+                        <a data-bind="text: value, attr: { href: 'tel:'+value }", class="contact-value"></a>
+                    </span>
+                    <span data-bind="if: type==='email'">
+                        <a data-bind="text: value, attr: { href: 'mailto:'+value }", class="contact-value"></a>
+                    </span>
+                    <span data-bind="if: type==='url'">
+                        <a data-bind="text: value, attr: { href: 'http://'+value }", class="contact-value"></a>
+                    </span>
                 </li>
             </ul>
         </div>
     </div>
     <div class="resume-body">
         <div class="body-section">
-             <h3 class="title">Skill Types</h3>
+             <h3 class="title">skill types</h3>
 
             <ul data-bind="foreach: skill_types" class="skill-types">
-                <li>
+                <li class="item">
                     <span data-bind="text: type" class="name"></span>
                     <ul data-bind="foreach: skills" class="skills">
-                        <li>
-                            <span data-bind="text: name, attr: { title: 'capability = ' + capability + ', desire = ' + desire }"></span>
+                        <li class="skill">
+                            <span data-bind="text: name, attr: { title: 'capability = ' + capability + ', desire = ' + desire }" class="name"></span>
                         </li>
                     </ul>
                 </li>
             </ul>
         </div>
         <div class="body-section">
-            <h3 class="title">Education</h3>
+            <h3 class="title">education</h3>
             <ul data-bind="foreach: education" class="education" >
-                <li>
+                <li class="item">
                     <div data-bind="text: what" class="what" ></div>
-                    <div data-bind="text: where" class="where" ></div>
                     <div data-bind="with: when" class="date-range" >
-                        <span data-bind="text: start + ' - ' + end" ></span>
+                        <span data-bind="text: start" class="start"></span>
+                        <span data-bind="text: end" class="end"></span>
                     </div>
+                    <div data-bind="text: where" class="where" ></div>
+                    <div data-bind="text: where" class="where" ></div>
                     <div data-bind="text: GPA" class="gpa" ></div>
+                </li> 
+            </ul>
+        </div>
+        <div class="body-section">
+            <h3 class="title">work experience</h3>
+            <ul data-bind="foreach: work" class="work">
+                <li class="item">
+                    <div data-bind="text: position" class="position" ></div>
+                    <div data-bind="with: when" class="date-range" >
+                        <span data-bind="text: start" class="start"></span>
+                        <span data-bind="text: end" class="end"></span>
+                    </div>
+                    <div data-bind="text: company" class="where" ></div>
+                    <ul data-bind="foreach: actions" class="actions">
+                        <li class="item">
+                            <!--TODO-->
+                        </li>
+                    </ul>
                 </li> 
             </ul>
         </div>
@@ -269,7 +325,7 @@ resumeData = {
 
     "work": [
         {
-            "title": "Engineer",
+            "position": "Engineer",
             "company": "Qualcomm DSP Architecture Group",
             "when": { "start": 2013, "end": "Present" },
 
