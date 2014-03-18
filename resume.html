@@ -107,7 +107,6 @@ a {
 }
 
 .major.item .what {
-    white-space: nowrap;
 }
 
 .major.item .what:after {
@@ -136,6 +135,16 @@ a {
 .name,
 .body-section>.title {
     text-transform: capitalize;
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size:16px;
+  }
+
+    .resume {
+        padding: inherit;
+    }
 }
 
 </style>
@@ -174,7 +183,7 @@ a {
             <h3 class="title">professional experience</h3>
             <ul data-bind="foreach: work" class="work">
                 <li class="major item">
-                    <span data-bind="text: what" class="what"></span>
+                    <span data-bind="text: what" class="what name"></span>
                     <span data-bind="with: when" class="date-range">
                         <span data-bind="text: start" class="start"></span>
                         <span data-bind="text: end" class="end"></span>
@@ -208,7 +217,7 @@ a {
             <h3 class="title">education</h3>
             <ul data-bind="foreach: education" class="education" >
                 <li class="major item">
-                    <span data-bind="text: what" class="what"></span>
+                    <span data-bind="text: what" class="what name"></span>
                     <span data-bind="with: when" class="date-range" >
                         <span data-bind="text: start" class="start"></span>
                         <span data-bind="text: end" class="end"></span>
@@ -222,7 +231,7 @@ a {
             <h3 class="title">projects</h3>
             <ul data-bind="foreach: projects" class="projects">
                 <li class="major item">
-                    <span data-bind="text: what" class="what"></span>
+                    <span data-bind="text: what" class="what name"></span>
                     <span data-bind="optional: where, binding: 'text'" class="where name" ></span>
                     <ul data-bind="foreach: details" class="details">
                         <li class="minor item">
@@ -236,7 +245,12 @@ a {
             <h3 class="title">Organizations</h3>
             <ul data-bind="foreach: organizations" class="organizations">
                 <li class="item">
-                    <span data-bind="text: $data" class="name"></span>
+                    <span data-bind="text: what" class="what name"></span>
+                    <!-- ko if: $data.details -->
+                        <span data-bind="foreach: details" class="details">
+                            <span data-bind="text: $data"></span>
+                        </span>
+                    <!-- /ko -->
                 </li>
             </ul>
         </div>
@@ -246,7 +260,7 @@ a {
 <div class="clear"></div>
 </script>
 
-<script type='text/javascript' src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js"></script>
+<script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
 <script>
 
 function loadResume() {
@@ -275,24 +289,37 @@ function ResumeViewModel() {
 }
 
 // Allow certain text features to be optional
-ko.bindingHandlers.optional = {
-    update: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
-        var innerBinding = allBindings.get('binding')
-        if (innerBinding) {
-            try {
-                ko.bindingHandlers[innerBinding].update(element, valueAccessor, allBindings, viewModel, bindingContext);
-            } catch(err) {
-                // Ignore missing properties
-                if (err.name !== "ReferenceError") {
-                    throw(err);
+(function() {
+    function optionalHandler(funcName) {
+        return function (
+                element, valueAccessor, allBindings, viewModel, bindingContext)
+        {
+            var innerBinding = allBindings.get('binding')
+            if (innerBinding) {
+                try {
+                    valueAccessor();
+                    ko.bindingHandlers[innerBinding][funcName](
+                            element, valueAccessor, allBindings, viewModel, bindingContext
+                    );
+                } catch(err) {
+                    // Ignore missing properties
+                    if (err.name !== "ReferenceError") {
+                        throw(err);
+                    }
                 }
+            } else {
+                throw "binding must be specified."
             }
-        } else {
-            throw "binding must be specified."
-        }
+        };
     }
-}
 
+    ko.bindingHandlers.optional = {
+        init: optionalHandler("init"),
+        update: optionalHandler("update")
+    };
+    ko.virtualElements.allowedBindings.optional = true;
+ })();
+ 
 // Set the page title and apply the VM to the view
 resumeVM = new ResumeViewModel();
 document.title = resumeVM.resume.name + "'s Resume"

@@ -98,13 +98,13 @@
 
     "education": [
         {
-            "what": "Bachelor of Science in Electrical Engineering",
+            "what": "BS Electrical Engineering",
             "where": "University of Texas at Austin",
             "when": { "start": 2009, "end": 2013 },
             "GPA": "3.96/4.00"
         },
         {
-            "what": "Bachelor of Science in Mathematics",
+            "what": "BS Mathematics",
             "where": "University of Texas at Austin",
             "when": { "start": 2010, "end": 2014 },
             "GPA": "3.92/4.00"
@@ -149,8 +149,15 @@
     ],
 
     "organizations": [
-        "Phi Beta Kappa",
-        "Tau Beta Pi",
-        "Eta Kappa Nu (Former President of UT Ψ Chapter)"
+        {
+            "what": "Phi Beta Kappa"
+        },
+        {
+            "what": "Tau Beta Pi"
+        },
+        {
+            "what": "Eta Kappa Nu",
+            "details": [ "(Former President of UT Ψ Chapter)" ]
+        }
     ]
 }
