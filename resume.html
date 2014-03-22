@@ -53,6 +53,10 @@ a {
     float: left;
 }
 
+.identification>.name {
+    font-size: 2em;
+}
+
 .contact {
     display: inline;
     float: right;
@@ -103,7 +107,7 @@ a {
 }
 
 .major.item {
-    margin-bottom: 0.75em;
+    margin-bottom: 1em;
 }
 
 .major.item .what {
@@ -114,6 +118,11 @@ a {
 }
 
 .major.item .where {
+    display: block;
+}
+
+.major.item .details {
+    margin-top: 0.5em;
 }
 
 .date-range {
@@ -121,10 +130,11 @@ a {
     white-space: nowrap;
     float: right;
     text-align: right;
+    font-style: italic;
     margin-left: 1.5em;
 }
 
-.date-range>.end:before {
+.date-range>.end:not(:empty):before {
     content: " - ";
 }
 
@@ -137,10 +147,10 @@ a {
     text-transform: capitalize;
 }
 
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
 
     .resume {
         padding-top: inherit;
@@ -194,14 +204,14 @@ a {
                     <span data-bind="text: what" class="what name"></span>
                     <span data-bind="with: when" class="date-range">
                         <span data-bind="text: start" class="start"></span>
-                        <span data-bind="text: end" class="end"></span>
+                        <span data-bind="optional: end, binding: 'text'" class="end"></span>
                     </span>
                     <span data-bind="text: where" class="where name"></span>
-                    <ul data-bind="foreach: details" class="details">
-                        <li class="minor item">
-                            <!--TODO-->
-                        </li>
-                    </ul>
+                    <!-- ko if: $data.details -->
+                        <ul data-bind="foreach: details" class="details">
+                            <li data-bind="text: $data"></li>
+                        </ul>
+                    <!-- /ko -->
                 </li> 
             </ul>
         </div>
@@ -241,18 +251,18 @@ a {
                 <li class="major item">
                     <span data-bind="text: what" class="what name"></span>
                     <span data-bind="optional: where, binding: 'text'" class="where name" ></span>
-                    <ul data-bind="foreach: details" class="details">
-                        <li class="minor item">
-                            <!--TODO-->
-                        </li>
-                    </ul>
+                    <!-- ko if: $data.details -->
+                        <ul data-bind="foreach: details" class="details">
+                            <li data-bind="text: $data"></li>
+                        </ul>
+                    <!-- /ko -->
                 </li> 
             </ul>
         </div>
         <div class="body-section">
             <h3 class="title">Organizations</h3>
             <ul data-bind="foreach: organizations" class="organizations">
-                <li class="item">
+                <li class="major item">
                     <span data-bind="text: what" class="what name"></span>
                     <!-- ko if: $data.details -->
                         <span data-bind="foreach: details" class="details">
