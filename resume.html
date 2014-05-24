@@ -339,7 +339,7 @@ function ResumeViewModel() {
     ko.virtualElements.allowedBindings.optional = true;
 
     function getNavigateTo(url) {
-        return function() { return function() { window.location.href = url; }; };
+        return function() { return function() { window.open(url); }; };
     }
 
     function linkHandler(funcName) {
