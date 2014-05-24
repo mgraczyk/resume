@@ -124,6 +124,10 @@ a {
     margin-top: 0.5em;
 }
 
+.bound-link {
+    cursor: pointer;
+}
+
 .date-range {
     display: inline-block;
     white-space: nowrap;
@@ -205,7 +209,7 @@ a {
                         <span data-bind="text: start" class="start"></span>
                         <span data-bind="optional: end, binding: 'text'" class="end"></span>
                     </span>
-                    <span data-bind="text: where" class="where name"></span>
+                    <span data-bind="link: where" class="where name"></span>
                     <!-- ko if: $data.details -->
                         <ul data-bind="foreach: details" class="details">
                             <li data-bind="text: $data"></li>
@@ -221,11 +225,9 @@ a {
                 <li class="major item">
                     <span data-bind="text: type" class="name"></span>
                     <ul data-bind="foreach: skills" class="skills">
-                        <!-- ko if: desire > 2 -->
-                            <li class="minor item skill">
-                                <span data-bind="text: name, attr: { title: 'capability = ' + capability + ', desire = ' + desire }" class="name"></span>
+                            <li data-bind="visible: desire > 2" class="minor item skill">
+                                <span data-bind="link: name, attr: { title: 'capability = ' + capability + ', desire = ' + desire }" class="name"></span>
                             </li>
-                        <!-- /ko -->
                     </ul>
                 </li>
             </ul>
@@ -239,7 +241,7 @@ a {
                         <span data-bind="text: start" class="start"></span>
                         <span data-bind="text: end" class="end"></span>
                     </span>
-                    <span data-bind="text: where" class="where name"></span>
+                    <span data-bind="link: where" class="where name"></span>
                     <div data-bind="text: GPA" class="gpa" ></div>
                 </li> 
             </ul>
@@ -248,7 +250,7 @@ a {
             <h3 class="title">projects</h3>
             <ul data-bind="foreach: projects" class="projects">
                 <li class="major item">
-                    <span data-bind="text: what" class="what name"></span>
+                    <span data-bind="link: what" class="what name"></span>
                     <span data-bind="optional: where, binding: 'text'" class="where name" ></span>
                     <!-- ko if: $data.details -->
                         <ul data-bind="foreach: details" class="details">
@@ -262,7 +264,7 @@ a {
             <h3 class="title">Organizations</h3>
             <ul data-bind="foreach: organizations" class="organizations">
                 <li class="major item">
-                    <span data-bind="text: what" class="what name"></span>
+                    <span data-bind="link: what" class="what name"></span>
                     <!-- ko if: $data.details -->
                         <span data-bind="foreach: details" class="details">
                             <span data-bind="text: $data"></span>
@@ -311,7 +313,7 @@ function ResumeViewModel() {
         return function (
                 element, valueAccessor, allBindings, viewModel, bindingContext)
         {
-            var innerBinding = allBindings.get('binding')
+            var innerBinding = allBindings.get('binding');
             if (innerBinding) {
                 try {
                     valueAccessor();
@@ -335,7 +337,51 @@ function ResumeViewModel() {
         update: optionalHandler("update")
     };
     ko.virtualElements.allowedBindings.optional = true;
- })();
+
+    function getNavigateTo(url) {
+        return function() { return function() { window.location.href = url; }; };
+    }
+
+    function linkHandler(funcName) {
+        return function (
+                element, valueAccessor, allBindings, viewModel, bindingContext)
+        {
+            var valueObj = valueAccessor();
+            var text;
+            text = valueObj.text;
+            if (!text) {
+                text = valueObj;
+            }
+
+            ko.bindingHandlers["text"][funcName](
+                element, function() { return text; },
+                allBindings, viewModel, bindingContext
+            );
+
+            var href = valueObj.href;
+            if (href) {
+                var httpPrefix = "http://";
+                if (href.substring(0,7) != httpPrefix) {
+                    href = httpPrefix + href;
+                }
+                var doClickFn = ko.bindingHandlers["click"][funcName];
+                if (doClickFn) {
+                    doClickFn(element, getNavigateTo(href),
+                              allBindings, viewModel, bindingContext);
+                }
+
+                // Add class so the element can be styled
+                element.className += " bound-link";
+            }
+        };
+    }
+
+    ko.bindingHandlers.link = {
+        init: linkHandler("init"),
+        update: linkHandler("update")
+    };
+    ko.virtualElements.allowedBindings.link = true;
+})();
  
 // Set the page title and apply the VM to the view
 resumeVM = new ResumeViewModel();
