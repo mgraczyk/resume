@@ -34,12 +34,6 @@
                     "desire": 10
                 },
                 {
-                    "name": { "text": "C#", "href": "github.com/search?q=user%3Amgraczyk+language%3AC%23" },
-                    "keys": ["c#"],
-                    "capability": 8,
-                    "desire": 5
-                },
-                {
                     "name": { "text": "Python", "href": "github.com/search?q=user%3Amgraczyk+language%3Apython" },
                     "keys": ["python"],
                     "capability": 9,
@@ -52,16 +46,16 @@
                     "desire": 9
                 },
                 {
-                    "name": "Perl",
-                    "keys": ["scripting", "perl"],
-                    "capability": 3,
-                    "desire": 0 
+                    "name": { "text": "C#", "href": "github.com/search?q=user%3Amgraczyk+language%3AC%23" },
+                    "keys": ["c#"],
+                    "capability": 8,
+                    "desire": 5
                 },
                 {
-                    "name": "Java",
-                    "keys": ["java"],
-                    "capability": 6,
-                    "desire": 1
+                    "name": "VHDL/Verilog",
+                    "keys": ["vhdl", "verilog"],
+                    "capability": 3,
+                    "desire": 7
                 },
                 {
                     "name": { "text": "Matlab/Octave", "href": "github.com/search?q=user%3Amgraczyk+language%3Amatlab+language%3Aoctave" },
@@ -76,16 +70,22 @@
                     "desire": 1
                 },
                 {
+                    "name": "Java",
+                    "keys": ["java"],
+                    "capability": 6,
+                    "desire": 1
+                },
+                {
                     "name": { "text": "HTML/CSS/Javascript", "href": "https://github.com/mgraczyk/resume" },
                     "keys": ["html", "css", "javascript", "web"],
                     "capability": 8,
                     "desire": 3
                 },
                 {
-                    "name": "VHDL/Verilog",
-                    "keys": ["vhdl", "verilog"],
+                    "name": "Perl",
+                    "keys": ["scripting", "perl"],
                     "capability": 3,
-                    "desire": 7
+                    "desire": 0 
                 }
             ]
         },
@@ -102,6 +102,12 @@
                     "name": { "text": ".NET", "href": "http://stackoverflow.com/search?tab=votes&q=user%3a1301879%20.net" },
                     "keys": [".net", "msil"],
                     "capability": 8,
+                    "desire": 6
+                },
+                {
+                    "name": "OpenGL/WebGL",
+                    "keys": ["graphics", "opengl"],
+                    "capability": 5,
                     "desire": 6
                 }
             ]
@@ -175,7 +181,8 @@
             "where": { "text": "Qualcomm DSP Architecture Group", "href": "en.wikipedia.org/wiki/Qualcomm_Hexagon" },
             "when": { "start": "July 2013", "end": "Present" },
             "details": [
-                "Implemented a microarchitectural model of the QDSP6 vector coprocessor in high performance C"
+                "Implemented a microarchitectural model of the QDSP6 vector coprocessor in high performance C",
+                "Worked closely with architects and RTL designers on performance modeling and verification"
             ]
         },
         {
@@ -213,7 +220,7 @@
 
     "projects": [
         {
-            "what": { "text": "MIST - The Learning Irrigation Controller", "href": "https://github.com/mgraczyk/Mist" },
+            "what": { "text": "MIST - The Learning Irrigation Controller", "href": "github.com/mgraczyk/Mist/" },
             "where": "UT Senior Design Project",
             "details": []
         },
@@ -221,19 +228,29 @@
             "what": "COOL to MIPS Compiler",
             "where": "Stanford Online CS143",
             "details": []
+        },
+        {
+            "what": "More of what I do in my free time can be found on",
+            "where": { "text": "My Github", "href": "github.com/mgraczyk" },
+            "details": []
         }
     ],
 
     "organizations": [
         {
-            "what": { "text": "Phi Beta Kappa", "href": "www.pbk.org" }
+            "what": { "text": "Phi Beta Kappa", "href": "www.pbk.org" },
+            "details": [ "Liberal Arts Honor Society" ]
         },
         {
-            "what": { "text": "Tau Beta Pi", "href": "www.tbp.org" }
+            "what": { "text": "Tau Beta Pi", "href": "www.tbp.org" },
+            "details": [ "Engineering Honor Society" ]
         },
         {
             "what": { "text": "Eta Kappa Nu", "href": "www.hkn.org" },
-            "details": [ "(Former President of UT Ψ Chapter)" ]
+            "details": [
+                "Electrical Engineering Honor Society",
+                "(Former President of UT Ψ Chapter)"
+            ]
         }
     ]
 }

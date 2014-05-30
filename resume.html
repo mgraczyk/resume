@@ -113,7 +113,8 @@ a {
 .major.item .what {
 }
 
-.major.item .what:after {
+/* TODO: This isn't working */
+.major.item .what:not(:last-child):after {
     content: ":";
 }
 
@@ -125,7 +126,6 @@ a {
 }
 
 .bound-link {
-    cursor: pointer;
 }
 
 .date-range {
@@ -134,7 +134,7 @@ a {
     float: right;
     text-align: right;
     font-style: italic;
-    margin-left: 1.5em;
+    margin-left: 1.0em;
 }
 
 .date-range>.end:not(:empty):before {
@@ -250,7 +250,7 @@ a {
             <ul data-bind="foreach: projects" class="projects">
                 <li class="major item">
                     <span data-bind="link: what" class="what name"></span>
-                    <span data-bind="optional: where, binding: 'text'" class="where name" ></span>
+                    <span data-bind="optional: where, binding: 'link'" class="where name" ></span>
                     <!-- ko if: $data.details -->
                         <ul data-bind="foreach: details" class="details">
                             <li data-bind="text: $data"></li>
@@ -324,6 +324,9 @@ function ResumeViewModel() {
                     if (err.name !== "ReferenceError") {
                         throw(err);
                     }
+                    if (element.parentNode) {
+                        element.parentNode.removeChild(element);
+                    }
                 }
             } else {
                 throw "binding must be specified."
@@ -346,32 +349,37 @@ function ResumeViewModel() {
                 element, valueAccessor, allBindings, viewModel, bindingContext)
         {
             var valueObj = valueAccessor();
-            var text;
-            text = valueObj.text;
-            if (!text) {
-                text = valueObj;
-            }
-
-            ko.bindingHandlers["text"][funcName](
-                element, function() { return text; },
-                allBindings, viewModel, bindingContext
-            );
-
+            var text = valueObj.text;
             var href = valueObj.href;
-            if (href) {
-                var httpPrefix = "http://";
-                if (href.substring(0,7) != httpPrefix) {
-                    href = httpPrefix + href;
-                }
-                var doClickFn = ko.bindingHandlers["click"][funcName];
-                if (doClickFn) {
-                    doClickFn(element, getNavigateTo(href),
-                              allBindings, viewModel, bindingContext);
-                }
 
+            var nextBinding;
+            var newValue;
+
+            if (text && href) {
                 // Add class so the element can be styled
                 element.className += " bound-link";
+
+                // TODO: What about ftp or other protocols?
+                if (href.length < 3 || href.substring(0,4) != "http") {
+                    href = "http://" + href;
+                }
+
+                var link = document.createElement('a');
+                link.textContent = text; 
+                link.href = href; 
+                link.target = "_blank";
+
+                nextBinding = "html";
+                newValue = link.outerHTML;
+            } else {
+                nextBinding = "text";
+                newValue = valueObj;
             }
+
+            ko.bindingHandlers[nextBinding][funcName](
+                element, function() { return newValue; },
+                allBindings, viewModel, bindingContext
+            );
         };
     }
 
