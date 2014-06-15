@@ -40,7 +40,7 @@
                     "desire": 7
                 },
                 {
-                    "name": "Asm: QDSP6,x86,MIPS,ARM",
+                    "name": { "text": "Asm: QDSP6,x86,MIPS,ARM", "href": "github.com/mgraczyk/fast_check_once" },
                     "keys": ["hexagon", "asm", "dsp"],
                     "capability": 6,
                     "desire": 9
