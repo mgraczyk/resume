@@ -218,6 +218,13 @@
 
     ],
 
+    "certifications": [
+        { 
+            "what": "Current TS/SCI Clearance SSBI Date",
+            "when": { "start": "Jan 2014" }
+        }
+    ],
+
     "projects": [
         {
             "what": { "text": "MIST - The Learning Irrigation Controller", "href": "github.com/mgraczyk/Mist/" },
@@ -238,12 +245,12 @@
 
     "organizations": [
         {
-            "what": { "text": "Phi Beta Kappa", "href": "www.pbk.org" },
-            "details": [ "Liberal Arts Honor Society" ]
-        },
-        {
             "what": { "text": "Tau Beta Pi", "href": "www.tbp.org" },
             "details": [ "Engineering Honor Society" ]
+        },
+        {
+            "what": { "text": "Phi Beta Kappa", "href": "www.pbk.org" },
+            "details": [ "Liberal Arts Honor Society" ]
         },
         {
             "what": { "text": "Eta Kappa Nu", "href": "www.hkn.org" },

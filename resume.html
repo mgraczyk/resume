@@ -260,6 +260,23 @@ a {
             </ul>
         </div>
         <div class="body-section">
+            <h3 class="title">Clearance and Certifications</h3>
+            <ul data-bind="foreach: certifications" class="certifications">
+                <li class="major item">
+                    <span data-bind="link: what" class="what name"></span>
+                    <span data-bind="with: when" class="date-range">
+                        <span data-bind="text: start" class="start"></span>
+                        <span data-bind="optional: end, binding: 'text'" class="end"></span>
+                    </span>
+                    <!-- ko if: $data.details -->
+                        <span data-bind="foreach: details" class="details">
+                            <span data-bind="text: $data"></span>
+                        </span>
+                    <!-- /ko -->
+                </li>
+            </ul>
+        </div>
+        <div class="body-section">
             <h3 class="title">Organizations</h3>
             <ul data-bind="foreach: organizations" class="organizations">
                 <li class="major item">
