@@ -178,8 +178,16 @@
     "work": [
         {
             "what": "Engineer",
+            "where": { "text": "Google", "href": "google.com" },
+            "when": { "start": "August 2014", "end": "Present" },
+            "details": [
+                "Building audio/video signal processing software systems"
+            ]
+        },
+        {
+            "what": "Engineer",
             "where": { "text": "Qualcomm DSP Architecture Group", "href": "en.wikipedia.org/wiki/Qualcomm_Hexagon" },
-            "when": { "start": "July 2013", "end": "Present" },
+            "when": { "start": "July 2013", "end": "August 2014" },
             "details": [
                 "Implemented a microarchitectural model of the QDSP6 vector coprocessor in high performance C",
                 "Worked closely with architects and RTL designers on performance modeling and verification"
