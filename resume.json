@@ -181,7 +181,8 @@
             "where": { "text": "Google", "href": "google.com" },
             "when": { "start": "August 2014", "end": "Present" },
             "details": [
-                "Building audio/video signal processing software systems"
+                "Building audio signal processing software systems",
+                "Contributing to WebRTC"
             ]
         },
         {
