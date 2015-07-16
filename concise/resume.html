@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<!-- Michael Graczyk's Resume -->
+<!-- Copyright 2014 - Michael Graczyk -->
+<!-- Like what you see? View it live at mgraczyk.com, or contact me if you're looking for an engineer. -->
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>Resume</title>
+
+<style>
+
+body {
+    font-family: "DejaVu Serif", "Georgia", serif;
+    margin: 0px;
+
+    background: #dfdfdf;
+}
+
+a {
+    text-decoration: none;
+}
+
+.outer-center {
+    float: right;
+    right: 50%;
+    position: relative;
+}
+.outer-center>.inner-center {
+    float: right;
+    right: -50%;
+    position: relative;
+}
+
+.outer-center+.clear {
+    clear: both;
+}
+
+.resume {
+    padding: 1em 8em 1em 8em;
+    background-color: #FAF0DC;
+}
+
+.name {
+    /* Don't put my name on two lines */
+    white-space: nowrap;
+}
+
+.identification {
+    display: block;
+    float: left;
+}
+
+.identification>.name {
+    font-size: 2em;
+}
+
+.contact {
+    display: inline;
+    float: right;
+}
+
+.contact .contact-methods {
+    list-style-type: none;
+}
+
+.contact .contact-method>.name {
+    margin-right: 0.5em;
+    float: left;
+}
+
+.contact .contact-value {
+    float: right;
+}
+
+.classification {
+    display: none;
+}
+
+.resume-body {
+    display: inline-block;
+    width: 100%;
+}
+
+.skill-types {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+.skill-types>.item {
+    margin: 0.5em;
+    float: left;
+    display: inline;
+}
+
+.skill-types .skills {
+    list-style-type: disc;
+}
+
+.skill-types>.major.item>.name {
+    font-weight: bold;
+}
+
+.major.item {
+    margin-bottom: 1em;
+}
+
+.major.item .what {
+}
+
+/* TODO: This isn't working */
+.major.item .what:not(:last-child):after {
+    content: ":";
+}
+
+.major.item .where {
+}
+
+.major.item .details {
+    margin-top: 0.5em;
+}
+
+.bound-link {
+}
+
+.date-range {
+    display: inline-block;
+    white-space: nowrap;
+    float: right;
+    text-align: right;
+    font-style: italic;
+    margin-left: 1.0em;
+}
+
+.date-range>.end:not(:empty):before {
+    content: " - ";
+}
+
+.gpa:before {
+    content: "GPA: ";
+}
+
+.body-section>.title {
+    text-transform: capitalize;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .resume {
+        padding-top: inherit;
+        padding-bottom: inherit;
+
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    .projects .name {
+        white-space: inherit;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+<div data-bind="template: {name: 'resumeTemplate'}"></div>
+
+<script type="text/html" id="resumeTemplate">
+<div class="outer-center">
+<div data-bind="with: resume" class="inner-center resume">
+    <div class="header">
+        <div class="identification">
+            <h1 data-bind="text: name" class="name"></h1><p data-bind="text: classification" class="classification"></p>
+        </div>
+        <div data-bind="with: contact" class="contact">
+            <ul data-bind="foreach: methods" class="contact-methods">
+                <li class="contact-method">
+                    <span data-bind="text: name +':'" class="name"></span>
+                    <span data-bind="if: type==='tel'">
+                        <a data-bind="text: value, attr: { href: 'tel:'+value }", class="contact-value"></a>
+                    </span>
+                    <span data-bind="if: type==='email'">
+                        <a data-bind="text: value, attr: { href: 'mailto:' + value}", class="contact-value"></a>
+                    </span>
+                    <span data-bind="if: type==='url'">
+                        <a data-bind="text: value, attr: { href: 'http://'+value }", class="contact-value"></a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="resume-body">
+        <div class="body-section">
+            <h3 class="title">professional experience</h3>
+            <ul data-bind="foreach: work" class="work">
+                <li class="major item">
+                    <span data-bind="text: what" class="what name"></span>
+                    <span data-bind="with: when" class="date-range">
+                        <span data-bind="text: start" class="start"></span>
+                        <span data-bind="optional: end, binding: 'text'" class="end"></span>
+                    </span>
+                    <span data-bind="link: where" class="where name"></span>
+                    <!-- ko if: $data.details -->
+                        <ul data-bind="foreach: details" class="details">
+                            <li data-bind="text: $data"></li>
+                        </ul>
+                    <!-- /ko -->
+                </li> 
+            </ul>
+        </div>
+        <div class="body-section">
+            <h3 class="title">skills</h3>
+
+            <ul data-bind="foreach: skill_types" class="skill-types">
+                <li class="major item">
+                    <span data-bind="text: type" class="name"></span>
+                    <ul data-bind="foreach: skills" class="skills">
+                            <li data-bind="visible: desire > 2" class="minor item skill">
+                                <span data-bind="link: name, attr: { title: 'capability = ' + capability + ', desire = ' + desire }" class="name"></span>
+                            </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="body-section">
+            <h3 class="title">education</h3>
+            <ul data-bind="foreach: education" class="education" >
+                <li class="major item">
+                    <span data-bind="text: what" class="what name"></span>
+                    <span data-bind="with: when" class="date-range" >
+                        <span data-bind="text: start" class="start"></span>
+                        <span data-bind="text: end" class="end"></span>
+                    </span>
+                    <span data-bind="link: where" class="where name"></span>
+                    <div data-bind="text: GPA" class="gpa" ></div>
+                </li> 
+            </ul>
+        </div>
+        <div class="body-section">
+            <h3 class="title">projects</h3>
+            <ul data-bind="foreach: projects" class="projects">
+                <li class="major item">
+                    <span data-bind="link: what" class="what name"></span>
+                    <span data-bind="optional: where, binding: 'link'" class="where name" ></span>
+                    <!-- ko if: $data.details -->
+                        <ul data-bind="foreach: details" class="details">
+                            <li data-bind="text: $data"></li>
+                        </ul>
+                    <!-- /ko -->
+                </li> 
+            </ul>
+        </div>
+        <div class="body-section">
+            <h3 class="title">Clearance and Certifications</h3>
+            <ul data-bind="foreach: certifications" class="certifications">
+                <li class="major item">
+                    <span data-bind="link: what" class="what name"></span>
+                    <span data-bind="with: when" class="date-range">
+                        <span data-bind="text: start" class="start"></span>
+                        <span data-bind="optional: end, binding: 'text'" class="end"></span>
+                    </span>
+                    <!-- ko if: $data.details -->
+                        <span data-bind="foreach: details" class="details">
+                            <span data-bind="text: $data"></span>
+                        </span>
+                    <!-- /ko -->
+                </li>
+            </ul>
+        </div>
+        <div class="body-section">
+            <h3 class="title">Organizations</h3>
+            <ul data-bind="foreach: organizations" class="organizations">
+                <li class="major item">
+                    <span data-bind="link: what" class="what name"></span>
+                    <!-- ko if: $data.details -->
+                        <span data-bind="foreach: details" class="details">
+                            <span data-bind="text: $data"></span>
+                        </span>
+                    <!-- /ko -->
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<div class="clear"></div>
+</script>
+
+<script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
+<script>
+
+function loadResume() {
+    var xmlhttp;
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xmlhttp.open("GET", "resume.json", false);
+    xmlhttp.send();
+
+    return JSON.parse(xmlhttp.responseText);
+}
+
+function ResumeViewModel() {
+    var self = this;
+
+    self.resume = loadResume();
+
+    if (!self.resume) {
+        throw "Couldn't load resume data!";
+    }
+}
+
+// Allow certain text features to be optional
+(function() {
+    function optionalHandler(funcName) {
+        return function (
+                element, valueAccessor, allBindings, viewModel, bindingContext)
+        {
+            var innerBinding = allBindings.get('binding');
+            if (innerBinding) {
+                try {
+                    valueAccessor();
+                    ko.bindingHandlers[innerBinding][funcName](
+                            element, valueAccessor, allBindings, viewModel, bindingContext
+                    );
+                } catch(err) {
+                    // Ignore missing properties
+                    if (err.name !== "ReferenceError") {
+                        throw(err);
+                    }
+                    if (element.parentNode) {
+                        element.parentNode.removeChild(element);
+                    }
+                }
+            } else {
+                throw "binding must be specified."
+            }
+        };
+    }
+
+    ko.bindingHandlers.optional = {
+        init: optionalHandler("init"),
+        update: optionalHandler("update")
+    };
+    ko.virtualElements.allowedBindings.optional = true;
+
+    function getNavigateTo(url) {
+        return function() { return function() { window.open(url); }; };
+    }
+
+    function linkHandler(funcName) {
+        return function (
+                element, valueAccessor, allBindings, viewModel, bindingContext)
+        {
+            var valueObj = valueAccessor();
+            var text = valueObj.text;
+            var href = valueObj.href;
+
+            var nextBinding;
+            var newValue;
+
+            if (text && href) {
+                // Add class so the element can be styled
+                element.className += " bound-link";
+
+                // TODO: What about ftp or other protocols?
+                if (href.length < 3 || href.substring(0,4) != "http") {
+                    href = "http://" + href;
+                }
+
+                var link = document.createElement('a');
+                link.textContent = text; 
+                link.href = href; 
+                link.target = "_blank";
+
+                nextBinding = "html";
+                newValue = link.outerHTML;
+            } else {
+                nextBinding = "text";
+                newValue = valueObj;
+            }
+
+            ko.bindingHandlers[nextBinding][funcName](
+                element, function() { return newValue; },
+                allBindings, viewModel, bindingContext
+            );
+        };
+    }
+
+    ko.bindingHandlers.link = {
+        init: linkHandler("init"),
+        update: linkHandler("update")
+    };
+    ko.virtualElements.allowedBindings.link = true;
+})();
+ 
+// Set the page title and apply the VM to the view
+resumeVM = new ResumeViewModel();
+document.title = resumeVM.resume.name + "'s Resume"
+ko.applyBindings(resumeVM);
+
+</script>
+</body>
+
+<html>

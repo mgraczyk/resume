@@ -1,0 +1,256 @@
+{
+    "name": "Michael Graczyk",
+    "classification": "US Citizen",
+    "contact": {
+        "methods": [
+            { 
+                "name": "telephone",
+                "type": "tel",
+                "value": 5123638462 
+            },
+            { 
+                "name": "email",
+                "type": "email",
+                "value": "jobs@mgraczyk.com" 
+            },
+            { 
+                "name": "website",
+                "type": "url",
+                "value": "mgraczyk.com"
+            }
+        ]
+    },
+
+    "objectives": [{"field": "engineering", "objective": null}],
+
+    "skill_types": [
+        {
+            "type": "Programming Languages",
+            "skills": [
+                {
+                    "name": { "text": "C/C++", "href": "github.com/search?q=user%3Amgraczyk+language%3AC+language%3AC%2B%2B"},
+                    "keys": ["c", "c++"],
+                    "capability": 9,
+                    "desire": 10
+                },
+                {
+                    "name": { "text": "Python", "href": "github.com/search?q=user%3Amgraczyk+language%3Apython" },
+                    "keys": ["python"],
+                    "capability": 9,
+                    "desire": 7
+                },
+                {
+                    "name": { "text": "Asm: QDSP6, x86, MIPS, ARM", "href": "github.com/mgraczyk/fast_check_once" },
+                    "keys": ["hexagon", "asm", "dsp"],
+                    "capability": 6,
+                    "desire": 9
+                },
+                {
+                    "name": { "text": "C#", "href": "github.com/search?q=user%3Amgraczyk+language%3AC%23" },
+                    "keys": ["c#"],
+                    "capability": 8,
+                    "desire": 5
+                },
+                {
+                    "name": { "text": "Matlab/Octave", "href": "github.com/search?q=user%3Amgraczyk+language%3Amatlab+language%3Aoctave" },
+                    "keys": ["matlab", "octave"],
+                    "capability": 7,
+                    "desire": 8
+                },
+                {
+                    "name": { "text": "Unix/Linux Shell", "href": "github.com/mgraczyk/HomeConfig" },
+                    "keys": ["sh", "bash", "shell"],
+                    "capability": 5,
+                    "desire": 1
+                },
+                {
+                    "name": "Java",
+                    "keys": ["java"],
+                    "capability": 6,
+                    "desire": 1
+                },
+                {
+                    "name": { "text": "HTML/CSS/Javascript", "href": "https://github.com/mgraczyk/resume" },
+                    "keys": ["html", "css", "javascript", "web"],
+                    "capability": 8,
+                    "desire": 3
+                },
+                {
+                    "name": "Perl",
+                    "keys": ["scripting", "perl"],
+                    "capability": 3,
+                    "desire": 0 
+                }
+            ]
+        },
+        {
+            "type": "Project Familiarity",
+            "skills": [
+                {
+                    "name": "WebRTC",
+                    "keys": ["webrtc"],
+                    "capability": 6,
+                    "desire": 7
+                },
+                {
+                    "name": "Chromium",
+                    "keys": ["chrome", "chromium"],
+                    "capability": 4,
+                    "desire": 4
+                },
+                {
+                    "name": "Linux Kernel",
+                    "keys": ["kernel", "linux"],
+                    "capability": 2,
+                    "desire": 8
+                },
+                {
+                    "name": "GCC",
+                    "keys": ["gcc", "glibc"],
+                    "capability": 2,
+                    "desire": 7
+                }
+            ]
+        },
+        {
+            "type": "Technologies",
+            "skills": [
+                {
+                    "name": "Spatial Audio Processing",
+                    "keys": ["audio", "spatial-audio"],
+                    "capability": 6,
+                    "desire": 8
+                },
+                {
+                    "name": "Image/Video Processing",
+                    "keys": ["image", "video", "dsp"],
+                    "capability": 5,
+                    "desire": 8
+                },
+                {
+                    "name": "Wireless Communications",
+                    "keys": ["wifi", "3gpp", "802.11", "gsm"],
+                    "capability": 6,
+                    "desire": 8
+                },
+                {
+                    "name": "Embedded Systems",
+                    "keys": ["embedded", "hardware"],
+                    "capability": 5,
+                    "desire": 8
+                }
+            ]
+        }
+    ],
+
+    "education": [
+        {
+            "what": "BS Electrical Engineering",
+            "where": { "text": "University of Texas at Austin", "href": "www.utexas.edu" },
+            "when": { "start": 2009, "end": 2013 },
+            "GPA": "3.96/4.00"
+        },
+        {
+            "what": "BS Mathematics",
+            "where": { "text": "University of Texas at Austin", "href": "www.utexas.edu" },
+            "when": { "start": 2010, "end": 2013 },
+            "GPA": "3.92/4.00"
+        }
+    ],
+
+    "work": [
+        {
+            "what": "Engineer",
+            "where": { "text": "Google", "href": "google.com" },
+            "when": { "start": "August 2014", "end": "Present" },
+            "details": [
+                "Building multichannel audio signal processing software systems, including beamforming and source localization",
+                "Writing high performance C++ for low-power and low-latency systems",
+                "Contributing to WebRTC"
+            ]
+        },
+        {
+            "what": "Engineer",
+            "where": { "text": "Qualcomm DSP Architecture Group", "href": "en.wikipedia.org/wiki/Qualcomm_Hexagon" },
+            "when": { "start": "July 2013", "end": "August 2014" },
+            "details": [
+                "Implemented a microarchitectural model of the QDSP6 vector coprocessor in high performance C",
+                "Worked closely with architects and RTL designers on performance modeling and verification"
+            ]
+        },
+        {
+            "what": "Engineering Intern",
+            "where": { "text": "Intel Graphics Architecture Group", "href": "www.intel.com" },
+            "when": { "start": "Feb 2012", "end": "April 2013" },
+            "details": [
+                "Developed a graphics power and performance test application using C# on .NET",
+                "Designed and implemented a concurrent, distributed, and highly performant automation solution"
+            ]
+        },
+        {
+            "what": "Engineering Intern",
+            "where": { "text": "Qualcomm UMTS Customer Engineering", "href": "www.qualcomm.com/about/businesses/qct" },
+            "when": { "start": "Summer 2011" },
+            "details": [
+                "Developed WCDMA protocol conformance testing automation tools as Perl and Win32 applications",
+                "Managed a team of interns in developing a test device tracking client application, server, and web front"
+            ]
+        },
+        {
+            "what": "Engineering Intern",
+            "where": { "text": "RF Code Inc", "href": "www.rfcode.com" },
+            "when": { "start": "Summer 2010" },
+            "details": [
+                "Designed .NET manufacturing testing systems on a software team",
+                "Created an antenna signal-lobe measurement, analysis, and 3D modeling application as a solo project"
+            ]
+        }
+    ],
+
+    "courses": [
+
+    ],
+
+    "certifications": [
+        { 
+            "what": "Current TS/SCI Clearance SSBI Date",
+            "when": { "start": "Jan 2014" }
+        }
+    ],
+
+    "projects": [
+        {
+            "what": { "text": "MIST - The Learning Irrigation Controller", "href": "github.com/mgraczyk/Mist/" },
+            "where": "UT Senior Design Project",
+            "details": []
+        },
+        {
+            "what": "COOL to MIPS Compiler",
+            "where": "Stanford Online CS143",
+            "details": []
+        },
+        {
+            "what": "More of what I do in my free time can be found on",
+            "where": { "text": "My Github", "href": "github.com/mgraczyk" },
+            "details": []
+        }
+    ],
+
+    "organizations": [
+        {
+            "what": { "text": "Tau Beta Pi", "href": "www.tbp.org" },
+            "details": [ "Engineering Honor Society" ]
+        },
+        {
+            "what": { "text": "Phi Beta Kappa", "href": "www.pbk.org" },
+            "details": [ "Liberal Arts Honor Society" ]
+        },
+        {
+            "what": { "text": "Eta Kappa Nu", "href": "www.hkn.org" },
+            "details": [
+                "Electrical Engineering Honor Society",
+                "(Former President of UT Ψ Chapter)"
+            ]
+        }
+    ]
+}
