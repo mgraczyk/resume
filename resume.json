@@ -40,7 +40,7 @@
                     "desire": 7
                 },
                 {
-                    "name": { "text": "Asm: QDSP6,x86,MIPS,ARM", "href": "github.com/mgraczyk/fast_check_once" },
+                    "name": { "text": "Asm: QDSP6, x86, MIPS, ARM", "href": "github.com/mgraczyk/fast_check_once" },
                     "keys": ["hexagon", "asm", "dsp"],
                     "capability": 6,
                     "desire": 9
@@ -102,7 +102,7 @@
                     "name": { "text": ".NET", "href": "http://stackoverflow.com/search?tab=votes&q=user%3a1301879%20.net" },
                     "keys": [".net", "msil"],
                     "capability": 8,
-                    "desire": 6
+                    "desire": 4
                 },
                 {
                     "name": "OpenGL/WebGL",
@@ -116,22 +116,40 @@
             "type": "Project Familiarity",
             "skills": [
                 {
-                    "name": "GCC",
-                    "keys": ["gcc", "glibc"],
-                    "capability": 2,
+                    "name": "WebRTC",
+                    "keys": ["webrtc"],
+                    "capability": 6,
                     "desire": 7
+                },
+                {
+                    "name": "Chromium",
+                    "keys": ["chrome", "chromium"],
+                    "capability": 4,
+                    "desire": 4
                 },
                 {
                     "name": "Linux Kernel",
                     "keys": ["kernel", "linux"],
                     "capability": 2,
                     "desire": 8
+                },
+                {
+                    "name": "GCC",
+                    "keys": ["gcc", "glibc"],
+                    "capability": 2,
+                    "desire": 7
                 }
             ]
         },
         {
             "type": "Technologies",
             "skills": [
+                {
+                    "name": "Spatial Audio Processing",
+                    "keys": ["audio", "spatial-audio"],
+                    "capability": 6,
+                    "desire": 8
+                },
                 {
                     "name": "Image/Video Processing",
                     "keys": ["image", "video", "dsp"],
@@ -170,7 +188,7 @@
         {
             "what": "BS Mathematics",
             "where": { "text": "University of Texas at Austin", "href": "www.utexas.edu" },
-            "when": { "start": 2010, "end": 2014 },
+            "when": { "start": 2010, "end": 2013 },
             "GPA": "3.92/4.00"
         }
     ],
@@ -181,7 +199,8 @@
             "where": { "text": "Google", "href": "google.com" },
             "when": { "start": "August 2014", "end": "Present" },
             "details": [
-                "Building audio signal processing software systems",
+                "Building multichannel audio signal processing software systems, including beamforming and source localization",
+                "Writing high performance C++ for low-power and low-latency systems",
                 "Contributing to WebRTC"
             ]
         },
