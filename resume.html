@@ -145,6 +145,10 @@ a {
     content: "GPA: ";
 }
 
+.honors {
+    font-style: italic;
+}
+
 .body-section>.title {
     text-transform: capitalize;
 }
@@ -241,7 +245,8 @@ a {
                         <span data-bind="text: end" class="end"></span>
                     </span>
                     <span data-bind="link: where" class="where name"></span>
-                    <div data-bind="text: GPA" class="gpa" ></div>
+                    <div data-bind="optional: gpa, binding: 'text'" class="gpa" ></div>
+                    <div data-bind="optional: honors, binding: 'text'" class="honors" ></div>
                 </li> 
             </ul>
         </div>

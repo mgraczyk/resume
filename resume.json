@@ -183,13 +183,13 @@
             "what": "BS Electrical Engineering",
             "where": { "text": "University of Texas at Austin", "href": "www.utexas.edu" },
             "when": { "start": 2009, "end": 2013 },
-            "GPA": "3.96/4.00"
+            "honors": "with high honors (top 10%)"
         },
         {
             "what": "BS Mathematics",
             "where": { "text": "University of Texas at Austin", "href": "www.utexas.edu" },
             "when": { "start": 2010, "end": 2013 },
-            "GPA": "3.92/4.00"
+            "honors": "with high honors (top 10%)"
         }
     ],
 
