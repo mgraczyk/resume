@@ -138,6 +138,12 @@
                     "keys": ["embedded", "hardware"],
                     "capability": 5,
                     "desire": 8
+                },
+                {
+                    "name": "Hardware Emulation",
+                    "keys": ["rtl", "sim", "verification"],
+                    "capability": 3,
+                    "desire": 2
                 }
             ]
         }
@@ -145,16 +151,21 @@
 
     "education": [
         {
+            "what": "Graduate Electrical Engineering Coursework",
+            "where": { "text": "Stanford University", "href": "www.stanford.edu" },
+            "when": { "start": 2015, "end": "present" }
+        },
+        {
             "what": "BS Electrical Engineering",
             "where": { "text": "University of Texas at Austin", "href": "www.utexas.edu" },
             "when": { "start": 2009, "end": 2013 },
-            "GPA": "3.96/4.00"
+            "honors": "with high honors (top 10%)"
         },
         {
             "what": "BS Mathematics",
             "where": { "text": "University of Texas at Austin", "href": "www.utexas.edu" },
             "when": { "start": 2010, "end": 2013 },
-            "GPA": "3.92/4.00"
+            "honors": "with high honors (top 10%)"
         }
     ],
 
@@ -165,8 +176,8 @@
             "when": { "start": "August 2014", "end": "Present" },
             "details": [
                 "Building multichannel audio signal processing software systems, including beamforming and source localization",
-                "Writing high performance C++ for low-power and low-latency systems",
-                "Contributing to WebRTC"
+                "Writing high performance C++ for low-power and low-latency systems, including WebRTC.",
+                "Contributing to 3D audio systems for virtual reality."
             ]
         },
         {
