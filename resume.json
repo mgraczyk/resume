@@ -180,7 +180,7 @@
 
     "education": [
         {
-            "what": "Graduate Electrical Engineering Coursework",
+            "what": "MS Electrical Engineering",
             "where": { "text": "Stanford University", "href": "www.stanford.edu" },
             "when": { "start": 2015, "end": "present" }
         },
