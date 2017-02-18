@@ -145,6 +145,12 @@
             "type": "Technologies",
             "skills": [
                 {
+                    "name": "Tensorflow,Theano",
+                    "keys": [],
+                    "capability": 6,
+                    "desire": 8
+                },
+                {
                     "name": "Spatial Audio Processing",
                     "keys": ["audio", "spatial-audio"],
                     "capability": 6,
@@ -201,8 +207,17 @@
     "work": [
         {
             "what": "Engineer",
+            "where": { "text": "comma.ai", "href": "comma.ai" },
+            "when": { "start": "October 2016", "end": "Present" },
+            "details": [
+                "Teaching cars how to drive.",
+                "Machine learning, data processing infrastructure and algorithms."
+            ]
+        },
+        {
+            "what": "Engineer",
             "where": { "text": "Google", "href": "google.com" },
-            "when": { "start": "August 2014", "end": "Present" },
+            "when": { "start": "August 2014", "end": "October 2016" },
             "details": [
                 "Building multichannel audio signal processing software systems, including beamforming and source localization",
                 "Writing high performance C++ for low-power and low-latency systems, including WebRTC.",
