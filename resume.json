@@ -206,9 +206,19 @@
 
     "work": [
         {
+            "what": "CTO",
+            "where": { "text": "OpenToken", "href": "https://opentoken.com" },
+            "when": { "start": "October 2017", "end": "Present" },
+            "details": [
+                "Building a crowdfunding and investment platform",
+                "Built wallet, deposit, withdrawal mechanisms for Ethereum, Stellar, Bitcoin, QTUM, NEO, others",
+                "Technical diligence for distributed systems and cryptocurrency projects"
+            ]
+        },
+        {
             "what": "Engineer",
             "where": { "text": "comma.ai", "href": "comma.ai" },
-            "when": { "start": "October 2016", "end": "Present" },
+            "when": { "start": "October 2016", "end": "October 2017" },
             "details": [
                 "Teaching cars how to drive.",
                 "Machine learning, data processing infrastructure and algorithms."
@@ -229,8 +239,8 @@
             "where": { "text": "Qualcomm DSP Architecture Group", "href": "en.wikipedia.org/wiki/Qualcomm_Hexagon" },
             "when": { "start": "July 2013", "end": "August 2014" },
             "details": [
-                "Implemented a microarchitectural model of the QDSP6 vector coprocessor in high performance C",
-                "Worked closely with architects and RTL designers on performance modeling and verification"
+                "Implemented QDSP6 microarchitectural model for a new vector coprocessor",
+                "Worked RTL designers on performance modeling and verification"
             ]
         },
         {

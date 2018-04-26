@@ -165,6 +165,25 @@
 
     "work": [
         {
+            "what": "CTO",
+            "where": { "text": "OpenToken", "href": "https://opentoken.com" },
+            "when": { "start": "October 2017", "end": "Present" },
+            "details": [
+                "Building a crowdfunding and investment platform",
+                "Built wallet, deposit, withdrawal mechanisms for Ethereum, Stellar, Bitcoin, QTUM, NEO, others",
+                "Technical diligence for distributed systems and cryptocurrency projects"
+            ]
+        },
+        {
+            "what": "Engineer",
+            "where": { "text": "comma.ai", "href": "comma.ai" },
+            "when": { "start": "October 2016", "end": "October 2017" },
+            "details": [
+                "Teaching cars how to drive.",
+                "Machine learning, data processing infrastructure and algorithms."
+            ]
+        },
+        {
             "what": "Engineer",
             "where": { "text": "Google", "href": "google.com" },
             "when": { "start": "August 2014", "end": "Present" },
@@ -179,35 +198,24 @@
             "where": { "text": "Qualcomm DSP Architecture Group", "href": "en.wikipedia.org/wiki/Qualcomm_Hexagon" },
             "when": { "start": "July 2013", "end": "August 2014" },
             "details": [
-                "Implemented a microarchitectural model of the QDSP6 vector coprocessor in high performance C",
-                "Worked closely with architects and RTL designers on performance modeling and verification"
+                "Implemented QDSP6 microarchitectural model for a new vector coprocessor",
+                "Worked RTL designers on performance modeling and verification"
             ]
         },
         {
             "what": "Engineering Intern",
             "where": { "text": "Intel Graphics Architecture Group", "href": "www.intel.com" },
-            "when": { "start": "Feb 2012", "end": "April 2013" },
-            "details": [
-                "Developed a graphics power and performance test application using C# on .NET"
-            ]
+            "when": { "start": "Feb 2012", "end": "April 2013" }
         },
         {
             "what": "Engineering Intern",
             "where": { "text": "Qualcomm UMTS Customer Engineering", "href": "www.qualcomm.com/about/businesses/qct" },
-            "when": { "start": "Summer 2011" },
-            "details": [
-                "Developed WCDMA protocol conformance testing automation tools as Perl and Win32 applications",
-                "Managed a team of interns in developing a test device tracking client application, server, and web front"
-            ]
+            "when": { "start": "Summer 2011" }
         },
         {
             "what": "Engineering Intern",
             "where": { "text": "RF Code Inc", "href": "www.rfcode.com" },
-            "when": { "start": "Summer 2010" },
-            "details": [
-                "Designed .NET manufacturing testing systems on a software team",
-                "Created an antenna signal-lobe measurement, analysis, and 3D modeling application as a solo project"
-            ]
+            "when": { "start": "Summer 2010" }
         }
     ],
 
