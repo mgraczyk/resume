@@ -188,7 +188,7 @@
         {
             "what": "MS Electrical Engineering",
             "where": { "text": "Stanford University", "href": "www.stanford.edu" },
-            "when": { "start": 2015, "end": "present" }
+            "when": { "start": 2015, "end": "2018" }
         },
         {
             "what": "BS Electrical Engineering",
@@ -287,11 +287,6 @@
         {
             "what": { "text": "MIST - The Learning Irrigation Controller", "href": "github.com/mgraczyk/Mist/" },
             "where": "UT Senior Design Project",
-            "details": []
-        },
-        {
-            "what": "COOL to MIPS Compiler",
-            "where": "Stanford Online CS143",
             "details": []
         },
         {
