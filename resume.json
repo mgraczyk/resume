@@ -4,11 +4,6 @@
     "contact": {
         "methods": [
             { 
-                "name": "telephone",
-                "type": "tel",
-                "value": 5123638462 
-            },
-            { 
                 "name": "email",
                 "type": "email",
                 "value": "jobs@mgraczyk.com" 
@@ -90,89 +85,37 @@
             ]
         },
         {
-            "type": "Platforms",
-            "skills": [
-                {
-                    "name": "GNU/Linux",
-                    "keys": ["gnu", "userland"],
-                    "capability": 8,
-                    "desire": 9
-                },
-                {
-                    "name": { "text": ".NET", "href": "http://stackoverflow.com/search?tab=votes&q=user%3a1301879%20.net" },
-                    "keys": [".net", "msil"],
-                    "capability": 8,
-                    "desire": 4
-                },
-                {
-                    "name": "OpenGL/WebGL",
-                    "keys": ["graphics", "opengl"],
-                    "capability": 5,
-                    "desire": 6
-                }
-            ]
-        },
-        {
-            "type": "Project Familiarity",
-            "skills": [
-                {
-                    "name": "WebRTC",
-                    "keys": ["webrtc"],
-                    "capability": 6,
-                    "desire": 7
-                },
-                {
-                    "name": "Chromium",
-                    "keys": ["chrome", "chromium"],
-                    "capability": 4,
-                    "desire": 4
-                },
-                {
-                    "name": "Linux Kernel",
-                    "keys": ["kernel", "linux"],
-                    "capability": 2,
-                    "desire": 8
-                },
-                {
-                    "name": "GCC",
-                    "keys": ["gcc", "glibc"],
-                    "capability": 2,
-                    "desire": 7
-                }
-            ]
-        },
-        {
             "type": "Technologies",
             "skills": [
                 {
-                    "name": "Tensorflow,Theano",
-                    "keys": [],
-                    "capability": 6,
+                    "name": "Machine Learning",
+                    "keys": ["ml", "machine learning"],
+                    "capability": 8,
                     "desire": 8
                 },
                 {
-                    "name": "Spatial Audio Processing",
+                    "name": "Computer Vision",
+                    "keys": ["image", "video", "dsp"],
+                    "capability": 6,
+                    "desire": 7
+                },
+                {
+                    "name": "Audio/Video Processing",
                     "keys": ["audio", "spatial-audio"],
                     "capability": 6,
                     "desire": 8
                 },
                 {
-                    "name": "Image/Video Processing",
-                    "keys": ["image", "video", "dsp"],
-                    "capability": 5,
+                    "name": "Distributed Systems",
+                    "keys": ["distributed", "consensus"],
+                    "capability": 7,
                     "desire": 8
                 },
                 {
-                    "name": "Wireless Communications",
-                    "keys": ["wifi", "3gpp", "802.11", "gsm"],
-                    "capability": 6,
-                    "desire": 8
-                },
-                {
-                    "name": "Embedded Systems",
-                    "keys": ["embedded", "hardware"],
-                    "capability": 5,
-                    "desire": 8
+                    "name": "Cryptocurrencies",
+                    "keys": ["crypto", "blockchain", "cryptocurrency"],
+                    "capability": 9,
+                    "desire": 6
                 },
                 {
                     "name": "Hardware Emulation",
@@ -239,8 +182,8 @@
             "where": { "text": "Qualcomm DSP Architecture Group", "href": "en.wikipedia.org/wiki/Qualcomm_Hexagon" },
             "when": { "start": "July 2013", "end": "August 2014" },
             "details": [
-                "Implemented QDSP6 microarchitectural model for a new vector coprocessor",
-                "Worked RTL designers on performance modeling and verification"
+                "QDSP6 microarchitectural model for HVX vector coprocessor",
+                "Worked with RTL designers on performance modeling and verification"
             ]
         },
         {
@@ -272,21 +215,15 @@
         }
     ],
 
-    "courses": [
-
-    ],
-
-    "certifications": [
-        { 
-            "what": "Current TS/SCI Clearance SSBI Date",
-            "when": { "start": "Jan 2014" }
-        }
-    ],
-
     "projects": [
         {
-            "what": { "text": "MIST - The Learning Irrigation Controller", "href": "github.com/mgraczyk/Mist/" },
-            "where": "UT Senior Design Project",
+            "what": { "text": "OpenToken - Easily invest in cryptocurrencies", "href": "https://app.opentoken.com" },
+            "where": "OpenToken",
+            "details": []
+        },
+        {
+            "what": { "text": "openpilot - open source driving agent", "href": "https://github.com/commaai/openpilot" },
+            "where": "comma.ai",
             "details": []
         },
         {

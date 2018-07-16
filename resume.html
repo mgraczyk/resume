@@ -40,7 +40,7 @@ a {
 
 .resume {
     padding: 1em 8em 1em 8em;
-    background-color: #FAF0DC;
+    background-color: #fffefa;
 }
 
 .name {
@@ -264,6 +264,7 @@ a {
                 </li> 
             </ul>
         </div>
+        <!-- ko if: $root.certifications -->
         <div class="body-section">
             <h3 class="title">Clearance and Certifications</h3>
             <ul data-bind="foreach: certifications" class="certifications">
@@ -281,6 +282,7 @@ a {
                 </li>
             </ul>
         </div>
+        <!-- /ko -->
         <div class="body-section">
             <h3 class="title">Organizations</h3>
             <ul data-bind="foreach: organizations" class="organizations">
