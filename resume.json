@@ -35,40 +35,10 @@
                     "desire": 7
                 },
                 {
-                    "name": { "text": "Asm: QDSP6, x86, MIPS, ARM", "href": "github.com/mgraczyk/fast_check_once" },
-                    "keys": ["hexagon", "asm", "dsp"],
-                    "capability": 6,
-                    "desire": 9
-                },
-                {
-                    "name": { "text": "C#", "href": "github.com/search?q=user%3Amgraczyk+language%3AC%23" },
-                    "keys": ["c#"],
-                    "capability": 8,
-                    "desire": 5
-                },
-                {
-                    "name": "VHDL/Verilog",
-                    "keys": ["vhdl", "verilog"],
-                    "capability": 3,
+                    "name": { "text": "Rust", "href": "github.com/search?q=user%3Amgraczyk+language%3Arust" },
+                    "keys": ["python"],
+                    "capability": 9,
                     "desire": 7
-                },
-                {
-                    "name": { "text": "Matlab/Octave", "href": "github.com/search?q=user%3Amgraczyk+language%3Amatlab+language%3Aoctave" },
-                    "keys": ["matlab", "octave"],
-                    "capability": 7,
-                    "desire": 8
-                },
-                {
-                    "name": { "text": "Unix/Linux Shell", "href": "github.com/mgraczyk/HomeConfig" },
-                    "keys": ["sh", "bash", "shell"],
-                    "capability": 5,
-                    "desire": 1
-                },
-                {
-                    "name": "Java",
-                    "keys": ["java"],
-                    "capability": 6,
-                    "desire": 1
                 },
                 {
                     "name": { "text": "HTML/CSS/Javascript", "href": "https://github.com/mgraczyk/resume" },
@@ -77,10 +47,13 @@
                     "desire": 3
                 },
                 {
-                    "name": "Perl",
+                    "name": {
+                      "text": "Others (Java, Matlab, shell, asm, perl, tcl)",
+                      "href": "https://github.com/search?q=user%3Amgraczyk+language%3Amatlab+language%3Aoc+language%3Aperl+language%3Aasm+language%3Ashell&type="
+                    },
                     "keys": ["scripting", "perl"],
-                    "capability": 3,
-                    "desire": 0 
+                    "capability": 6,
+                    "desire": 5
                 }
             ]
         },
