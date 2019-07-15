@@ -1,0 +1,155 @@
+% resume.tex
+%
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+%
+% This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+
+\documentclass[hidelinks,letterpaper,10pt]{article}
+
+%-----------------------------------------------------------
+%Margin setup
+
+\setlength{\voffset}{0.1in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\paperheight}{11in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{11in}
+\setlength{\textheight}{9.5in}
+\setlength{\topskip}{0in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{7.25in}
+\setlength{\oddsidemargin}{-0.5in}
+\setlength{\evensidemargin}{-0.2in}
+%-----------------------------------------------------------
+\usepackage{shading}
+%\textheight=9.0in
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\usepackage{CJKutf8}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=false,
+    linkcolor=blue,
+}
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\large \parashade[.9]{sharpcorners}{\textbf{#1 \vphantom{p\^{E}}}}}
+\vspace{-18pt}\noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}
+}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & #2
+\end{tabular*}
+\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+        \textit{#3} & \textit{#4}
+\end{tabular*}\vspace{-6pt}
+}
+%-----------------------------------------------------------
+
+
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Michael Graczyk} & \href{https://mgraczyk.com}{more details at mgraczyk.com} \\
+I make things with software & michael@mgraczyk.com \\
+\end{tabular*}
+\\
+
+\vspace{0.1in}
+
+\resheading{Education}
+\begin{itemize}
+\item
+	\ressubheading{\href{https://drive.google.com/file/d/1ZN1fF-wgu_11hmzJcG2MCSIR51ERt7_F/preview}{Stanford University}}{}{MS Electrical Engineering}{2015 - 2018}
+	\begin{itemize}
+		\resitem{Focus on machine learning and distributed computing}
+	\end{itemize}
+
+\item
+	\ressubheading{\href{https://utdirect.utexas.edu/apps/degree/degrees/nlogon/?s_last_name_read=\&s_last_isn_read=\&s_first_name_read=\&s_first_isn_read=\&s_paging_sw=\&s_first_time_sw=X\&s_start_name=graczyk\%2C+michael}{University of Texas at Austin}}
+		{}{BS Mathematics, BS Electrical Engineering, both high honors (top 10\%)}{2009 - 2013}
+	\begin{itemize}
+		\resitem{Focus on applied mathematics, signal processing, and computer architecture}
+		\resitem{Two degrees in 7 semesters (rare)}
+	\end{itemize}
+
+\end{itemize}
+
+\resheading{Work}
+\begin{itemize}
+\item
+	\ressubheading{OpenToken}{\href{https://app.opentoken.com}{app.opentoken.com}}{Cofounder and CTO}{Oct. 2017 - Present}
+	\begin{itemize}
+		\resitem{Built a crowdfunding site for blockchain projects. Accepted crypto payment and distributed tokens.}
+		\resitem{Wrote software and smart contracts that moved over \$20M USD}
+		\resitem{Managed up to 3 experienced engineers at a time}
+	\end{itemize}
+
+\item
+	\ressubheading{hunches}{\href{https://hunches.app}{hunches.app}}{Cofounder and CTO}{Feb. 2019 - Present}
+	\begin{itemize}
+		\resitem{Designed and implemented a new kind of prediction market with simpler UX}
+		\resitem{Analyzed user metrics and product tradeoffs to improve conversions and retention}
+	\end{itemize}
+
+\item
+	\ressubheading{comma.ai}{\href{https://comma.ai}{comma.ai}}{VP Engineering}{Oct. 2016 - Oct. 2017}
+	\begin{itemize}
+		\resitem{Built a data processing pipeline and trained models on 100s of terabytes of video and sensor data}
+		\resitem{Deployed and validated models on public roads in a fleet of hundreds of devices}
+		\resitem{Managed 2 specialized engineers on mapping and localization projects}
+	\end{itemize}
+
+\item
+	\ressubheading{Google}{\href{https://google.com}{media signal processing}}{Engineer}{Aug. 2014 - Oct. 2016}
+	\begin{itemize}
+		\resitem{Invented new techniques for practical 3D audio compression}
+		\resitem{Implemented high performance C\texttt{++} audio processing for low-power and low-latency systems like WebRTC}
+		\resitem{Co-managed 2 engineering interns}
+	\end{itemize}
+
+\item
+	\ressubheading{Qualcomm}{\href{en.wikipedia.org/wiki/Qualcomm_Hexagon}{DSP Architecture}}{Engineer}{Jul. 2013 - Aug. 2014}
+	\begin{itemize}
+		\resitem{Implemented new DSP coprocessor in C\texttt{++} simulation. Developed experiments for RTL team}
+	\end{itemize}
+
+\item
+	\ressubheading{Intel, Qualcomm, RF Code}{Interships}{Engineering Intern}{2009 - 2013}
+	\begin{itemize}
+		\resitem{learned from top engineers in graphics architecture, WCDMA protocol conformance, and RF hardware}
+	\end{itemize}
+
+\end{itemize}
+
+
+\resheading{Everything Else}
+\begin{description}
+\item[Languages:]
+	\href{https://github.com/search?q=user\%3Amgraczyk+language\%3Apython}{Python},
+	\href{https://github.com/search?q=user\%3Amgraczyk+language\%3AC+language\%3AC\%2B\%2B}{C/C\texttt{++}},
+	\href{https://github.com/search?q=user\%3Amgraczyk+language\%3Arust}{Rust},
+	\href{https://github.com/search?q=user\%3Amgraczyk+language\%3Ajavascript}{Javascript/HTML/CSS},
+	\href{https://github.com/opentoken-inc/eth-artifacts}{solidity},
+	\href{https://github.com/search?q=user\%3Amgraczyk+language\%3Alatex}{\LaTeX},
+	\href{https://github.com/search?q=user\%3Amgraczyk+language\%3Amatlab+language\%3Aoc+language\%3Aperl+language\%3Aasm+language\%3Ashell&type=}{Java, C$^\sharp$, MATLAB, asm, perl, tcl, bash}
+
+\item[Other Roles:] Blockchain Research Advisor for velo.org, Founder and CEO of bitcrud.com, developed fastrlp parser
+
+\item[Technologies:]
+	Machine Learning, Distributed Systems, Blockchain/Cryptocurrency, Audio/Video Processing/Compression, React, Hardware Emulation, AWS S\{E,N,Q,S,\ldots\}S
+
+\item[Patents:] \href{https://patents.google.com/patent/US20180124540A1}{Projection-based audio coding (US20180124540A1)}
+
+\item[Human Languages:] Beginner \begin{CJK}{UTF8}{bsmi}中文\end{CJK}(Chinese), Basic español
+\end{description}
+
+\end{document}

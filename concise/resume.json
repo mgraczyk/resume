@@ -143,7 +143,7 @@
         {
             "what": "Engineer",
             "where": { "text": "Google", "href": "google.com" },
-            "when": { "start": "August 2014", "end": "Present" },
+            "when": { "start": "August 2014", "end": "October 2016" },
             "details": [
                 "Building multichannel audio signal processing software systems, including beamforming and source localization",
                 "Writing high performance C++ for low-power and low-latency systems, including WebRTC.",
