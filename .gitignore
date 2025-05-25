@@ -6,4 +6,6 @@
 
 *.pyc
 
+.DS_Store
+
 errors.err

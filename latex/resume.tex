@@ -33,6 +33,9 @@
 \usepackage{CJKutf8}
 
 \usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{textcomp}
+
 \hypersetup{
     colorlinks=false,
     linkcolor=blue,
@@ -56,11 +59,13 @@
 
 
 \begin{document}
-
-\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
-\textbf{\Large Michael Graczyk} & \href{https://mgraczyk.com}{mgraczyk.com} \\
-Machine Learning Researcher and Founder with 13+ Years of Experience & michael@mgraczyk.com \\
-\end{tabular*}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X
+                               >{\raggedleft\arraybackslash}l@{}}
+  \textbf{\Large Michael Graczyk} & \href{https://mgraczyk.com}{mgraczyk.com}\\
+  Staff-level ML \& performance research engineer. & michael@mgraczyk.com\\
+  13+ yrs shipping fast multimodal AI to $>$1 B users, raised \$5 M for two startups.
+        & \href{https://github.com/mgraczyk}{github.com/mgraczyk}
+\end{tabularx}
 \\
 
 \vspace{0.1in}
@@ -68,63 +73,69 @@ Machine Learning Researcher and Founder with 13+ Years of Experience & michael@m
 \resheading{Work}
 \begin{itemize}
 \item
-  \ressubheading{Quilt}{\href{https://quilt.app}{quilt.app}}{Cofounder and CTO}{2023 - Present}
+  \ressubheading{Google Research}{\href{https://google.com}{google.com}}{Staff Engineer}{2021 - 2023}
   \begin{itemize}
-    \resitem{Automating technical selling}
+    \resitem{Created $>$1M-image dataset and trained/optimized U-Net for Edge TPU, runs on
+    $>$20M Pixel devices}
+    \resitem{Reduced entire pipeline memory/latency/power $>$10\% to make room for my new models}
   \end{itemize}
 
 \item
-  \ressubheading{Google Research}{\href{https://google.com}{google.com}}{Staff Engineer}{2021 - 2023}
+  \ressubheading{Quilt}{\href{https://quilt.app}{quilt.app}}{Cofounder and CTO}{2023 - Present}
   \begin{itemize}
-    \resitem{Researching computational photography with generative AI, synthetic data}
-    \resitem{Tech Lead for projects in core image quality, ML models on edge TPUs}
-    \resitem{Built end to end data generation, training, and inference running on millions of devices}
+    \resitem{Raised \$2.5M to build AI agents for technical sales}
+    \resitem{Scaling team to 4 engineers and 2 sales/ops employees}
+    \resitem{Hundreds of paying users, useful agents with fine-tuned embeddings and search models}
   \end{itemize}
 
 \item
   \ressubheading{Instagram (Meta)}{\href{https://instagram.com}{instagram.com}}{ML Engineer}{2019 - 2021}
   \begin{itemize}
-    \resitem{Tech Lead for camera and comments ranking and personalization}
-    \resitem{Leading cross-functional efforts across multiple teams of 12+ people, ML at scale domain expert}
-    \resitem{Increased key engagement metrics by XX\% during COVID compute-capacity crunch}
+    \resitem{Reduced ML cost $>$\$5M/year with optimizations and experiment guardrails}
+    \resitem{Increased camera engagement $>$10\% and stories engagement $>$0.5\% new models and data/value model fixes}
+    \resitem{Tech lead for cross-functional efforts across multiple teams of 12+ people, ML at scale domain expert}
   \end{itemize}
 
 \item
   \ressubheading{OpenToken and hunches}{\href{https://hunches.app}{hunches.app}}{Cofounder and CTO}{2017 - 2019}
   \begin{itemize}
-    \resitem{Raised \$2.6M in venture capital to build a cryptocurrency crowdfunding platform}
-    \resitem{Managed 3 experienced engineers}
-    \resitem{Company pivoted, later acquired at \$XXM valuation}
+    \resitem{Raised \$2.6M, hired 3 engineers, built a crypto crowdfunding platform, moved $>$\$40M}
+    \resitem{Company acquired for \$40M after I left and after a pivot}
   \end{itemize}
 
 \item
   \ressubheading{comma.ai}{\href{https://comma.ai}{comma.ai}}{VP Engineering}{2016 - 2017}
   \begin{itemize}
-    \resitem{Managed 2 specialized engineers on mapping and localization projects}
-    \resitem{Designed and trained deep neural networks for driving and video processing}
+    \resitem{Shipped Level 2 self driving to $>$1000 users with behavioral cloning and computer
+    vision}
+    \resitem{Used LSTMs, custom keras\textrightarrow OpenCL compiler, novel multimodal loss, custom data pipeline}
   \end{itemize}
 
 \item
-  \ressubheading{Google}{\href{https://google.com}{Audio Research}}{Engineer}{2014 - 2016}
+  \ressubheading{Google (audio), Qualcomm (DSP arch), Intel (GPU arch)}{\href{en.wikipedia.org/wiki/Qualcomm_Hexagon}{}}{Engineer}{2012 - 2016}
 
-\item
-  \ressubheading{Qualcomm}{\href{en.wikipedia.org/wiki/Qualcomm_Hexagon}{DSP Architecture}}{Engineer}{2013 - 2014}
-
-\item
-  \ressubheading{Intel}{Graphics Architecture}{Co-op Engineer}{2012 - 2013}
 \end{itemize}
 
 \resheading{Education}
 \begin{itemize}
 \item
-  \ressubheading{\href{https://drive.google.com/file/d/1ZN1fF-wgu_11hmzJcG2MCSIR51ERt7_F/preview}{Stanford University}}{}{MS Electrical Engineering}{}
-  \begin{itemize}
-    \resitem{Machine Learning and Distributed Systems}
-  \end{itemize}
+  \ressubheading{\href{https://drive.google.com/file/d/1ZN1fF-wgu_11hmzJcG2MCSIR51ERt7_F/preview}{Stanford University}}{}{MS Electrical Engineering - Machine Learning and Distributed Systems}{}
 
 \item
   \ressubheading{\href{https://utdirect.utexas.edu/apps/degree/degrees/nlogon/?s_last_name_read=\&s_last_isn_read=\&s_first_name_read=\&s_first_isn_read=\&s_paging_sw=\&s_first_time_sw=X\&s_start_name=graczyk\%2C+michael}{University of Texas at Austin}}
     {}{BS Mathematics, BS Electrical Engineering}{}
+
+\end{itemize}
+
+\resheading{Papers}
+\begin{itemize}
+\setlength\itemsep{0em}
+\item
+  \href{https://ieeexplore.ieee.org/abstract/document/7602964}{On pre-filtering strategies for the GCC-PHAT algorithm (2016)}
+\item
+  \href{https://www.semanticscholar.org/paper/Design-and-Analysis-of-a-Hardware-CNN-Accelerator-Kiningham/fbee8198a25a9594707ccb02f3fdfd80cbac13ba}{Design and Analysis of a Hardware CNN Accelerator (2017)}
+\item
+  \href{https://cs229.stanford.edu/proj2015/184_report.pdf}{Automatic Product Categorization for Anonymous Marketplaces (2015)}
 
 \end{itemize}
 
@@ -135,20 +146,18 @@ Machine Learning Researcher and Founder with 13+ Years of Experience & michael@m
   \href{https://github.com/search?q=user\%3Amgraczyk+language\%3Apython}{Python},
   \href{https://github.com/search?q=user\%3Amgraczyk+\%28language\%3AC+OR+language\%3AC\%2B\%2B\%29&type=code}{C/C\texttt{++}},
   \href{https://github.com/search?q=user\%3Amgraczyk+language\%3Arust}{Rust},
-  \href{https://github.com/search?q=user\%3Amgraczyk+language\%3Ajavascript}{Javascript/HTML/CSS},
+  \href{https://github.com/search?q=user\%3Amgraczyk+language\%3Ajavascript}{Typescript/Javascript},
   \href{https://github.com/search?q=user\%3Amgraczyk+language\%3Agolang}{Go},
-  \href{https://github.com/opentoken-inc/eth-artifacts}{solidity},
-  \href{https://github.com/search?q=user\%3Amgraczyk+language\%3Alatex}{\LaTeX},
   \href{https://github.com/search?q=user\%3Amgraczyk+\%28language\%3Amatlab+OR+language\%3Alua+OR+language\%3Aperl+OR+language\%3Aasm+OR+language\%3Ajava+OR+language\%3Ashell\%29&type=code}{Java,
-    C$^\sharp$, Lua, MATLAB, asm, perl, bash, Hack}
+    C$^\sharp$, Lua, MATLAB, asm, Perl, Hack}
     
 
-  \item[Other Roles:] Advisor at hero.app (acquired by People.ai),
-  \href{https://store.app}{Store.app}, \href{https://www.virtualstagingai.app/}{Virtual Staging AI}. Open source contributor, cryptocurrency blogger
-
 \item[Technologies:]
-  Machine Learning (pytorch, jax, tensorflow), Generative AI/Agents, LLMs, Edge TPUs,
-  Blockchain/Cryptocurrency, React, Hardware Emulation, GCP and AWS S\{E,N,Q,S,\ldots\}S
+  ML (pytorch, jax, tensorflow, tflite), LLMs, Agents, Edge TPUs, React, GCP and AWS
+
+  \item[Other Roles:] Advisor at hero.app (acquired by People.ai), \
+      \href{https://www.virtualstagingai.app/}{Advisor at Virtual Staging AI (acquired by Zillow)}
+
 \end{description}
 
 \end{document}
